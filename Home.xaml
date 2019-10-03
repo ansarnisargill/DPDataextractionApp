@@ -1,0 +1,22 @@
+﻿<Window x:Class="DPSQLDumpApp.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DPSQLDumpApp"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        mc:Ignorable="d"
+        Title="Home" Height="450" Width="884" WindowState="Maximized">
+    <Grid>
+        <Label Content="From" BorderBrush="White" HorizontalAlignment="Left" Margin="38,14,0,0" VerticalAlignment="Top"/>
+
+        <DatePicker HorizontalAlignment="Left" SelectedDateChanged="CBFrom_SelectedDateChanged" Name="CBFrom" Margin="120,13,0,0" VerticalAlignment="Top" Width="170"/>
+        <Label Content="To" BorderBrush="White" HorizontalAlignment="Left" Margin="309,14,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" SelectedDateChanged="CBFrom_SelectedDateChanged" Name="CBTo" Margin="348,14,0,0"  VerticalAlignment="Top" Width="170"/>
+        <Label Content="Search" BorderBrush="White" Margin="523,14,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBox HorizontalAlignment="Left" x:Name="CBTo_Copy" Margin="577,14,0,0" BorderBrush="{StaticResource DarkPrimaryBrush}"  VerticalAlignment="Top" Width="170"/>
+        <DataGrid Name="dg" Background="White" CanUserAddRows="False" CanUserDeleteRows="False" Margin="0,92,0,0" />
+        <TextBlock HorizontalAlignment="Left" Foreground="{StaticResource DarkPrimaryBrush}" FontWeight="DemiBold" FontSize="16" Margin="38,69,0,0" Text="" Name="CountText" TextWrapping="Wrap" VerticalAlignment="Top" Width="694"/>
+
+    </Grid>
+</Window>

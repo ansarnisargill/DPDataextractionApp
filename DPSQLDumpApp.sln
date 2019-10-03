@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPSQLDumpApp", "DPSQLDumpApp.csproj", "{6BCBDC81-341E-4955-9ED5-AA270206210E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BCBDC81-341E-4955-9ED5-AA270206210E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BCBDC81-341E-4955-9ED5-AA270206210E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BCBDC81-341E-4955-9ED5-AA270206210E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BCBDC81-341E-4955-9ED5-AA270206210E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E0449B3-6937-4B6C-83BE-1AC7E923FF33}
+	EndGlobalSection
+EndGlobal
