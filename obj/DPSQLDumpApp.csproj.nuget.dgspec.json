@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\it\\source\\repos\\DPSQLDumpApp\\DPSQLDumpApp.csproj": {}
+    "C:\\Users\\it\\Desktop\\DPDataextractionApp\\DPSQLDumpApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\it\\source\\repos\\DPSQLDumpApp\\DPSQLDumpApp.csproj": {
+    "C:\\Users\\it\\Desktop\\DPDataextractionApp\\DPSQLDumpApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\it\\source\\repos\\DPSQLDumpApp\\DPSQLDumpApp.csproj",
+        "projectUniqueName": "C:\\Users\\it\\Desktop\\DPDataextractionApp\\DPSQLDumpApp.csproj",
         "projectName": "DPSQLDumpApp",
-        "projectPath": "C:\\Users\\it\\source\\repos\\DPSQLDumpApp\\DPSQLDumpApp.csproj",
+        "projectPath": "C:\\Users\\it\\Desktop\\DPDataextractionApp\\DPSQLDumpApp.csproj",
         "packagesPath": "C:\\Users\\it\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\it\\source\\repos\\DPSQLDumpApp\\obj\\",
+        "outputPath": "C:\\Users\\it\\Desktop\\DPDataextractionApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
