@@ -15,6 +15,7 @@
         <DatePicker HorizontalAlignment="Left" SelectedDateChanged="CBFrom_SelectedDateChanged" Name="CBTo" Margin="348,14,0,0"  VerticalAlignment="Top" Width="170"/>
         <Label Content="Search" BorderBrush="White" Margin="523,14,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <TextBox HorizontalAlignment="Left" x:Name="TBSearch" TextChanged="TextChanged" Margin="577,14,0,0" BorderBrush="{StaticResource DarkPrimaryBrush}"  VerticalAlignment="Top" Width="170"/>
+        <Button    HorizontalAlignment="Left" x:Name="BTNExport" Click="ButtonClick"  Margin="777,14,0,0"  Style="{StaticResource ButtonPrimary}"  VerticalAlignment="Top" Width="170">Export To Excel</Button>
         <DataGrid Name="dg" Background="White" CanUserAddRows="False" CanUserDeleteRows="False" Margin="0,92,0,0" />
         <TextBlock HorizontalAlignment="Left" Foreground="{StaticResource DarkPrimaryBrush}" FontWeight="DemiBold" FontSize="16" Margin="38,69,0,0" Text="" Name="CountText" TextWrapping="Wrap" VerticalAlignment="Top" Width="694"/>
 

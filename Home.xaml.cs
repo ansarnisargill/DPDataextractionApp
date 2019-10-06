@@ -26,6 +26,7 @@ namespace DPSQLDumpApp
     {
         public List<HouseDTO> ListOfHouses { get; set; }
         public List<HouseDTO> ExtractedList { get; set; }
+        public bool IsFormLoaded { get; set; } = false;
 
         public Home()
         {
@@ -37,31 +38,55 @@ namespace DPSQLDumpApp
         {
             this.CBFrom.SelectedDate = DateTime.Now;
             this.CBTo.SelectedDate = DateTime.Now;
-
+            this.IsFormLoaded = true;
+            RunQuery();
         }
         public void RunQuery()
         {
             try
             {
-                var from = CBFrom.SelectedDate.Value;
-                var to = CBTo.SelectedDate.Value;
-                using (var context = new MainContext())
+                if (this.IsFormLoaded)
                 {
-                    this.ListOfHouses = new List<HouseDTO>();
-                    this.ExtractedList = this.ListOfHouses = context.Houses.Where(x => x.PostingDate >= from.Date && x.PostingDate <= to.Date)
-                        .Select(x => new HouseDTO
+                    var from = CBFrom.SelectedDate.Value;
+                    var to = CBTo.SelectedDate.Value;
+                    using (var context = new MainContext())
+                    {
+                        this.ListOfHouses = new List<HouseDTO>();
+                     this.ListOfHouses = context.Houses.Where(x => x.PostingDate >= from.Date && x.PostingDate <= to.Date)
+                            .Select(x => new HouseDTO
+                            {
+                                Address = x.Address,
+                                PostingDate = x.PostingDate,
+                                Bedrooms = x.Bedrooms,
+                                City = x.City,
+                                LivingSpaceArea = x.LivingSpaceArea,
+                                LotDimensions = x.LotDimensions,
+                                OriginalURL = x.OriginalURL,
+                                Price = x.Price,
+                                Washrooms = x.Washrooms
+                            }).ToList();
+                        this.ListOfHouses.ForEach(x =>
                         {
-                            Address = x.Address,
-                            PostingDate = x.PostingDate,
-                            Bedrooms = x.Bedrooms,
-                            City = x.City,
-                            LivingSpaceArea = x.LivingSpaceArea,
-                            LotDimensions = x.LotDimensions,
-                            OriginalURL = x.OriginalURL,
-                            Price = x.Price,
-                            Washrooms = x.Washrooms
-                        }).ToList();
-                    SetDGList();
+                            var piecesOfLink=x.OriginalURL.Split('/').ToList();
+                            var enNode=piecesOfLink.FindIndex(x=>x.Trim()=="en");
+                            x.City=piecesOfLink.ElementAt(enNode+2);
+                            if (x.City == null)
+                            {
+                                x.City = "";
+                            }
+                            if (x.LotDimensions == null)
+                            {
+                                x.LotDimensions = "";
+                            }
+                            if (x.LivingSpaceArea == null)
+                            {
+                                x.LivingSpaceArea = "";
+                            }
+
+                        });
+                        this.ExtractedList=this.ListOfHouses;
+                        SetDGList();
+                    }
                 }
             }
             catch (Exception ex)
@@ -163,6 +188,13 @@ namespace DPSQLDumpApp
                 }
             });
             SetDGList();
+        }
+        private void ButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (ListToExcel(this.ExtractedList))
+            {
+                MessageBox.Show("Data has been extracted!");
+            }
         }
     }
 
