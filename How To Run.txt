@@ -1,0 +1,3 @@
+First install .net core 3 sdk
+
+then double click Run.cmd file.
